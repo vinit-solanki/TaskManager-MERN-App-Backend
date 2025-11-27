@@ -20,9 +20,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/taskapp')
   .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
-app.use('/', (req, res) => {
-  res.send('API is running...');
-});
 app.use('/api/auth', authRoutes);
 app.use('/api/tasks', taskRoutes);
 app.use('/api/profile', profileRoutes);
